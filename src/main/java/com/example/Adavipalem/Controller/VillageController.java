@@ -15,6 +15,7 @@ public class VillageController {
     @GetMapping("Home")
     public String villageDetails()
     {
+//        Added a comment
         return "Temple";
     }
 
