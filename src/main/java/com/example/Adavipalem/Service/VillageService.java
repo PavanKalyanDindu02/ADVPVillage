@@ -13,6 +13,7 @@ public class VillageService {
 
     public void Add_temple(Temple temple) {
         VR.save(temple);
+//        Added comment
 
     }
 }
