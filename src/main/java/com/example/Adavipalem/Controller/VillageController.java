@@ -3,11 +3,10 @@ package com.example.Adavipalem.Controller;
 import com.example.Adavipalem.Model.Temple;
 import com.example.Adavipalem.Service.VillageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @RequestMapping("Adavipalem")
 public class VillageController {
     @Autowired
@@ -16,23 +15,47 @@ public class VillageController {
     public String villageDetails()
     {
 //        Added a comment
+        return "Home";
+    }
+
+    @GetMapping("Temple")
+    public String TemplesADVP()
+    {
         return "Temple";
     }
 
-    @GetMapping("Temples")
-    public String TemplesADVP()
+    @GetMapping("Festival")
+    public String FestivalADVP()
     {
-        return "Temples.html";
+        return "Festivals";
+    }
+    @GetMapping("Crop")
+    public String cropADVP()
+    {
+        return "Crop";
+    }
+    @GetMapping("People")
+    public String peopleADVP()
+    {
+        return "People";
+    }
+    @GetMapping("View")
+    public String ViewADVP()
+    {
+        return "View";
+    }
+    @GetMapping("House")
+    public String houseADVP()
+    {
+        return "House";
     }
 
-    @GetMapping("addTemple")
-    public void Add_temple()
+    @PostMapping("addTemple")
+    public String Add_temple(@ModelAttribute("temple") Temple temple)
     {
-        Temple temple = new Temple(1001, "Ramalayam", "9912237871", "Ramulavarivewedhi, Advaipalem", "The temple is constructed in 2005 and the main god in this Sri ramudu and Seethamatha");
+
         VS.Add_temple(temple);
-
+        return "redirect:/Adavipalem/Temples";
     }
-
-
 
 }
