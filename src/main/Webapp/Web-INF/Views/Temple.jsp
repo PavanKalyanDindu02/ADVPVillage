@@ -17,5 +17,5 @@
     <input type = "submit">
 </form>
 
-</body>Git
+</body>
 </html>
