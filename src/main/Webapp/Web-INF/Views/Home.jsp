@@ -5,14 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Adavipalem</title>
+<H1>Welcome to ADAVIPALEM</H1>
 </head>
 <body>
-Welcome to ADAVIPALEM
-<H1>Festivals<H1><Br>
-<H1>Crops<H1><Br>
-<H1>Houses<H1><Br>
-<H1>People<H1><Br>
-<H1>Views<H1><Br>
-<H1>Temples<H1><Br>
+<a href = "Temple"><H4>Temples</H4><Br></a>
+<a href = "Festival"><H4>Festivals</H4><Br></a>
+<a href = "Crop"><H4>Crops</H4><Br></a>
+<a href = "House"><H4>Houses</H4><Br></a>
+<a href = "People"><H4>People</H4><Br></a>
+<a href = "View"><H4>Views</H4><Br></a>
 </body>
 </html>
