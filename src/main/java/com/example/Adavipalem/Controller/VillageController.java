@@ -4,7 +4,9 @@ import com.example.Adavipalem.Model.Temple;
 import com.example.Adavipalem.Service.VillageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @Controller
 @RequestMapping("Adavipalem")
@@ -19,8 +21,14 @@ public class VillageController {
     }
 
     @GetMapping("Temple")
-    public String TemplesADVP()
+    public String TemplesADVP(Model model)
     {
+        List<Temple> temple = VS.getTempleDetails();
+
+        model.addAttribute("temples",temple);
+//        System.out.println(temple);
+//        model.addAttribute("Temple", temple);
+
         return "Temple";
     }
 
@@ -53,9 +61,7 @@ public class VillageController {
     @PostMapping("addTemple")
     public String Add_temple(@ModelAttribute("temple") Temple temple)
     {
-
         VS.Add_temple(temple);
-        return "redirect:/Adavipalem/Temples";
+        return "Temple";
     }
-
 }

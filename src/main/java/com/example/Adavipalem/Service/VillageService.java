@@ -5,6 +5,8 @@ import com.example.Adavipalem.Model.Temple;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class VillageService {
 
@@ -15,5 +17,11 @@ public class VillageService {
         VR.save(temple);
 //        Added comment
 
+    }
+
+    public List<Temple> getTempleDetails() {
+
+        List<Temple> temple = VR.findAll();
+        return temple;
     }
 }
